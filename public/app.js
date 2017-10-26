@@ -3,7 +3,18 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].tags + "<br />" + data[i].pubDate + "<br />" + data[i].video +"</p>");
+      $(".row").append('<div class="col-sm-6 col-md-4"><div class="thumbnail"><a class="lightbox" target="_blank" href="'
+          + data[i].link + '"><img src="' + data[i].photo + '" alt="' + data[i].title +
+          '"></a><div class="caption"><h3>' + data[i].pubDate + ": " + data[i].title + '</h3>' +
+          '<p>' + data[i].desc + '</p></div ></div ></div> '
+      )
+      
+    //   $("#articles").append("<section data-id='" + data[i]._id + "'>" +
+    //       "<h3>" + data[i].pubDate + " " + data[i].title + "</h3>" +
+    //       "<h4><a href= '" + data[i].link + "'> Souce: The Guardian</a></h4><br />" +
+    //       "<p>" + data[i].desc + "</p><br />" +
+          
+    //       "<br /><img src='" + data[i].photo + "'/></section>");
   }
 });
 

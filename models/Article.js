@@ -9,22 +9,22 @@ var ArticleSchema = new Schema({
   // `title` is required and of type String
   title: {
     type: String,
-    required: true
+    required: false
   },
   // `link` is required and of type String
   link: {
     type: String,
-    required: true
+    required: false
   },
-  tags: {
-    type: Array,
-    required: true
+  desc: {
+    type: String,
+    required: false
   },
   pubDate: {
     type: String,
-    required: true
+    required: false
   },
-  video: {
+  photo: {
     type: String,
     required: false
   },
