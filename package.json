@@ -1,0 +1,32 @@
+{
+  "name": "week-18_web-scraping",
+  "version": "1.0.0",
+  "description": "### Overview",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathrynherod/Week-18_Web-Scraping.git"
+  },
+  "keywords": [
+    "web",
+    "scraping"
+  ],
+  "author": "Kathryn Herod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathrynherod/Week-18_Web-Scraping/issues"
+  },
+  "homepage": "https://github.com/kathrynherod/Week-18_Web-Scraping#readme",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4",
+    "morgan": "^1.9.0",
+    "request": "^2.83.0"
+  }
+}
