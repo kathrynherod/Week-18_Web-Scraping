@@ -10,8 +10,9 @@ p {
 h3 {
     text-align: left;
 }
-#top-buttons {
+.top-buttons {
     margin: auto auto;
+    text-align: right;
 }
 
 .gallery-container h1 {
@@ -30,7 +31,7 @@ h3 {
 }
 
 .tz-gallery {
-    padding: 40px;
+    margin-top: 25px;
 }
 
 .tz-gallery .thumbnail {
@@ -59,10 +60,9 @@ h3 {
 .tz-gallery .caption{
     padding: 26px 30px;
     text-align: center;
-    height: 175px;
+    height: 150px;
     overflow-y: scroll;
     margin: auto auto;
-    
 }
 
 .tz-gallery .caption h3 {
@@ -80,3 +80,8 @@ h3 {
 .baguetteBox-button {
     background-color: transparent !important;
 }
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
