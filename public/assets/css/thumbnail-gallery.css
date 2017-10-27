@@ -10,6 +10,9 @@ p {
 h3 {
     text-align: left;
 }
+#top-buttons {
+    margin: auto auto;
+}
 
 .gallery-container h1 {
     text-align: center;

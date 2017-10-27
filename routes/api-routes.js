@@ -1,7 +1,11 @@
-var db = require("./models");
+var db = require("../models");
+// Our scraping tools
+// Axios is a promised-based http library, similar to jQuery's Ajax method
+// It works on the client and on the server
+var axios = require("axios");
+var cheerio = require("cheerio");
 
 module.exports = function(app) {
-
     // A GET route for scraping the echojs website
     app.get("/scrape", function(req, res) {
         // First, we grab the body of the html with request
@@ -30,7 +34,7 @@ module.exports = function(app) {
                     .create(result)
                     .then(function(dbArticle) {
                         // If we were able to successfully scrape and save an Article, send a message to the client
-                        res.send("Scrape Complete");
+                        res.redirect('/');
                     })
                     .catch(function(err) {
                         // If an error occurred, send it to the client
@@ -38,7 +42,23 @@ module.exports = function(app) {
                     });
             }); // close .each function
         }); // close axios
+        //db.Article.remove({ photo: undefined });
+        //db.Article.deleteOne({ "photo": undefined });
     }); //close app.get
+
+    app.get("/clear", function(req, res) {
+        // Grab every document in the Articles collection
+        db.Article
+            .remove({})
+            .then(function(dbArticle) {
+                // If we were able to successfully find Articles, send them back to the client
+                res.redirect('/');
+            })
+            .catch(function(err) {
+                // If an error occurred, send it to the client
+                res.json(err);
+            });
+    });
 
     // Route for getting all Articles from the db
     app.get("/articles", function(req, res) {
