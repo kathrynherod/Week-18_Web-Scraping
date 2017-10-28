@@ -49,6 +49,7 @@ $(document).ready(function () {
                         $("#titleinput").html(data.note.title);
                         // Place the body of the note in the body textarea
                         $("#bodyinput").html(data.note.body);
+                            
                         $("#note-text").attr("data-id", thisId).text("Your note was added at " + data.note.timestamp)
                     }
                 });
