@@ -13,13 +13,9 @@ $(document).ready(function () {
                     data[i].link + '"><img src="' + data[i].photo + '" alt="' + data[i].title +
                     '"></a><div class="caption"><h3>' + data[i].pubDate + ": " + data[i].title + '</h3>' +
                     '<p>' + data[i].desc + '</p><br>' +
-                    '<div class="top-buttons"><button type="button" class="btn btn-primary" id="add-note" value="' + data[i]._id + '" data-toggle="modal" data-target="#notesModal'+i+'">View/Add Notes</button></div>' +
+                    '<div class="top-buttons"><button type="button" class="btn btn-primary" id="add-note" value="' + data[i]._id + '" data-toggle="modal" data-target="#notesModal">View/Add Notes</button></div>' +
                     '</div></div></div>')
-                $(".col-sm-6").append('<div class="modal fade" id= "notesModal'+i+'" tabindex= "-1" role= "dialog" aria-labelledby="myModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-                    '<h4 class="modal-title" id="modalTitle">' + data[i].title + '</h4></div><div class="modal-body">' +
-                    '<form><div class="form-group"><label for="titleinput" class="control-label">Note Title:</label><input type="text" class="form-control" id="titleinput"></div><div class="form-group"><label for="bodyinput" class="control-label">Note Text:</label><textarea class="form-control" id="bodyinput"></textarea></div></form>'+
-                    '<p id="note-text"></p><h4 id="note-title"></h4><p id="note-body"></p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary" id="save-note" data-id="' + data[i]._id + '">Save Note</button></div></div></div></div> '
-                )
+                
             }
         }
     });
@@ -31,6 +27,8 @@ $(document).ready(function () {
             //$("#notes").empty();
             // Save the id from the p tag
             var thisId = $(this).attr("value");
+            
+            
             //console.log(thisId)
 
             $.ajax({
@@ -39,14 +37,19 @@ $(document).ready(function () {
             })
                 // With that done, add the note information to the page
                 .done(function (data) {
-                    console.log(data);
+                    $("#modalTitle").text(data.title)
+                    $("#save-note").attr("data-id", thisId);
+                    $("#note-text").attr("data-id", thisId);
+
+                    //console.log(data);
                     //If there's a note in the article
                     if (data.note) {
                         //console.log(data.note)
                         // Place the title of the note in the title input
-                        $("#titleinput").html();
+                        $("#titleinput").html(data.note.title);
                         // Place the body of the note in the body textarea
-                        $("#bodyinput").html();
+                        $("#bodyinput").html(data.note.body);
+                        $("#note-text").attr("data-id", thisId).text("Your note was added at " + data.note.timestamp)
                     }
                 });
         } else if (buttonid === "save-note") {
@@ -62,14 +65,16 @@ $(document).ready(function () {
                     // Value taken from title input
                     title: $("#titleinput").val(),
                     // Value taken from note textarea
-                    body: $("#bodyinput").val()
+                    body: $("#bodyinput").val(),
+                    timestamp: Date.now()
                 }
             })
                 // With that done
                 .done(function (data) {
                     // Log the response
-                    console.log(data.title + data.body);
-                    // Empty the notes section
+                    //console.log(data.title + data.body);
+                    $("#note-text").attr("data-id", thisId).text("Your Note Was Saved")
+
                     
                     
                 });

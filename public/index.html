@@ -28,9 +28,49 @@
     <div class="tz-gallery">
 
         <div class="row">
-
         </div>
-        <div id="notes"></div>
+
+        <div class="modal fade" id= "notesModal" tabindex= "-1" role= "dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="modalTitle"></h4>
+                    </div>
+                    <div class="modal-body"><form>
+                        <div class="form-group">
+                            <label for="titleinput" class="control-label">
+                                Note Title:
+                            </label>
+                            <input type="text" class="form-control" id="titleinput" name:"title">
+                        </div>
+                        <div class="form-group">
+                            <label for="bodyinput" class="control-label" name="body">
+                                Note Text:
+                            </label>
+                            <textarea class="form-control" id="bodyinput">
+                                </textarea>
+                            </div>
+                        </form>
+                        <p id="note-text"></p>
+                        <h4 id="note-title"></h4>
+                        <p id="note-body"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" id="save-note" data-id="">
+                            Save Note
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
 
     </div>
 
