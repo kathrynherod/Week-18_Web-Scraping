@@ -2,7 +2,7 @@
 
  * Click [here](https://serene-beyond-27591.herokuapp.com/) to run this app in your browser
 
- * Original Scraped Site Link: (https://www.theguardian.com/world/series/eyewitness)
+ * Original Scraped Site Link: https://www.theguardian.com/world/series/eyewitness
 
 ## Features
 
