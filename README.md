@@ -6,9 +6,9 @@
 
 ## Features
 
-* This web scraping app accomplishes the following:
+** This web scraping app accomplishes the following: **
 
-  1. Whenever a user visits the site, the app scrapea stories from The Guardian and displays them for the user. Each scraped article is saved to the application database. The app scrapes and displays the following information for each article:
+  * Whenever a user visits the site, the app scrapea stories from The Guardian and displays them for the user. Each scraped article is saved to the application database. The app scrapes and displays the following information for each article:
 
      * Headline - the title of the article
 
@@ -24,13 +24,13 @@
 
       ![1](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex1.gif?raw=true)
 
-  2. Users are also able to leave comments on the articles displayed and revisit them later. The comments are saved to the database, as well, and associated with their articles. Stored comments should be visible to every user.
+  * Users are also able to leave comments on the articles displayed and revisit them later. The comments are saved to the database, as well, and associated with their articles. Stored comments should be visible to every user.
 
    * Here's a quick demo
 
       ![2](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex2.gif?raw=true)
 
-  3. If the user decides to delete all of the notes and articles and start fresh, all of the data may be deleted. 
+  * If the user decides to delete all of the notes and articles and start fresh, all of the data may be deleted. 
 
     * Here's a quick demo
 
