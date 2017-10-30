@@ -1,10 +1,8 @@
 # Web-Scraping
 
-## Overview
+ * Click [here](https://serene-beyond-27591.herokuapp.com/) to run this app in your browser
 
-    * Click [here](https://serene-beyond-27591.herokuapp.com/) to run this app in your browser
-
-    * Original Scraped Site Link: (https://www.theguardian.com/world/series/eyewitness)
+ * Original Scraped Site Link: (https://www.theguardian.com/world/series/eyewitness)
 
 ## Features
 
@@ -24,16 +22,16 @@
 
      * Here's a quick demo
 
-     ![1](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex1.gif?raw=true)
+      ![1](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex1.gif?raw=true)
 
   2. Users are also able to leave comments on the articles displayed and revisit them later. The comments are saved to the database, as well, and associated with their articles. Stored comments should be visible to every user.
 
    * Here's a quick demo
 
-    ![2](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex2.gif?raw=true)
+      ![2](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex2.gif?raw=true)
 
   3. If the user decides to delete all of the notes and articles and start fresh, all of the data may be deleted. 
 
     * Here's a quick demo
 
-    ![3](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex3.gif?raw=true)
+      ![3](https://github.com/kathrynherod/Week-18_Web-Scraping/blob/master/gifs/ex3.gif?raw=true)
