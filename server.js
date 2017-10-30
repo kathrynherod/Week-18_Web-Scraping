@@ -37,7 +37,7 @@ app.use(express.static("public"));
 // app.listen(PORT, function() {
 //     console.log("App running on port " + PORT + "!");
 // });
-
+//mongodb://heroku_xq5bhznx:55dhqjdgo532486q0dgfia59pq@ds241895.mlab.com:41895/heroku_xq5bhznx
 var db = process.env.MONGODB_URI || "mongodb://localhost/webscrapingHW";
 
 mongoose.connect(db, function(error) {
