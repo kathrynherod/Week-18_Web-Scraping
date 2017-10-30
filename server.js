@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 // Require all models
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = 3000 || process.env.PORT;
 
 // Initialize Express
 var app = express();
@@ -22,18 +22,33 @@ app.use(express.static("public"));
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/webscrapingHW", {
-    useMongoClient: true
+//mongoose.Promise = Promise;
+// mongoose.connect("mongodb://localhost/webscrapingHW", {
+//     useMongoClient: true
+// });
+
+
+
+// // Routes
+// // =============================================================
+// require("./routes/api-routes.js")(app);
+
+// // Start the server
+// app.listen(PORT, function() {
+//     console.log("App running on port " + PORT + "!");
+// });
+
+var db = process.env.MONGODB_URI || "mongodb://localhost/webscrapingHW";
+
+mongoose.connect(db, function(error) {
+  if (error) {
+      return error;
+  }
+  else {
+    console.log("Connection Success!");
+  }
 });
 
-
-
-// Routes
-// =============================================================
-require("./routes/api-routes.js")(app);
-
-// Start the server
 app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
+  console.log("Listening on port:" + PORT);
 });
