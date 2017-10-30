@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-//mongoose.Promise = Promise;
+mongoose.Promise = Promise;
 // mongoose.connect("mongodb://localhost/webscrapingHW", {
 //     useMongoClient: true
 // });
@@ -31,7 +31,7 @@ app.use(express.static("public"));
 
 // // Routes
 // // =============================================================
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 // // Start the server
 // app.listen(PORT, function() {
